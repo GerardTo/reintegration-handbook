@@ -1,6 +1,3 @@
----
-layout: null
----
 window.onload = function () {
     var script = document.createElement('script');
     var firstScript = document.getElementsByTagName('script')[0];
