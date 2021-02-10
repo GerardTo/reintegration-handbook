@@ -1,5 +1,11 @@
-source "https://rubygems.org"
+source "https://rubygems.org" # source "https://gems.ruby-china.com"
 
-gem "jekyll-rtd-theme", "~> 2.0.6"
+gemspec
 
 gem "github-pages", group: :jekyll_plugins
+#gem 'jekyll-offline', :git => 'https://github.com/jeremiak/jekyll-offline.git'
+gem 'jekyll-multiple-languages-plugin'
+
+group :jekyll_plugins do
+  gem "jekyll-pwa-workbox"
+end

@@ -1,25 +1,54 @@
 title: Reintegration Handbook
-lang: en
 description: Practical guidance on the design, implementation and monitoring of reintegration assistance
 
-## local method ##
-# theme: jekyll-rtd-theme
-# debug:
-#   compress: false
-#   dist: true
-#   shortcodes: true
+theme: null
 
-## remote method ##
-remote_theme: rundocs/jekyll-rtd-theme
+debug:
+  compress: true
+  dist: false
+  shortcodes: false
+  
+host: 0.0.0.0
 
 readme_index:
   with_frontmatter: true
-
-exclude:
-  - Gemfile
-  - Gemfile.lock
 
 plugins:
   - jemoji
   - jekyll-avatar
   - jekyll-mentions
+#  - jekyll-offline
+  - jekyll-multiple-languages-plugin
+
+exclude:
+  - Makefile
+  - CNAME
+  - LICENSE
+  - update.sh
+  - Gemfile
+  - Gemfile.lock
+  - requirements.txt
+  - node_modules
+  - package.json
+  - package-lock.json
+  - webpack.config.js
+  - jekyll-rtd-theme.gemspec
+
+offline:
+ strategy: cache-first-network-fallback
+
+repository: GerardTo/jekyll-rtd-theme
+
+pwa:
+  sw_src_filepath: service-worker.js # Optional
+  sw_dest_filename: service-worker.js # Optional
+  dest_js_directory: assets/js # Required
+  precache_recent_posts_num: 5 # Optional
+  precache_glob_directory: / # Optional
+  precache_glob_patterns: # Optional
+    - "/**/*.{js,json,css}"
+    - "/**/*.{ico,jpg,jpeg,png,svg}"
+    - "/**/*.html"
+  precache_glob_ignores: # Optional
+    - "sw-register.js"
+    - "fonts/**/*"
