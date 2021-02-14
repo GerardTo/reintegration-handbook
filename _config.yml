@@ -33,6 +33,7 @@ exclude:
   - package-lock.json
   - webpack.config.js
   - jekyll-rtd-theme.gemspec
+  - common/assets/sw.caches.js
 
 offline:
  strategy: cache-first-network-fallback
