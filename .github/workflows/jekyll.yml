@@ -18,6 +18,10 @@ jobs:
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
         jekyll/builder:latest /bin/bash -c "chmod 777 /srv/jekyll && touch /srv/jekyll/Gemfile.lock && chmod 777 /srv/jekyll/Gemfile.lock && jekyll build --future"
+    - name: Install and Build
+      run: |
+        npm install
+        npm run build        
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@4.0.0
       with:
